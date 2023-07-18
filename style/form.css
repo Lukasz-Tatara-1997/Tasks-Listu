@@ -1,0 +1,23 @@
+.formElement{
+    background-color: #fff;
+    width: 100%;
+    padding-bottom: 20px;
+    padding: 20px;
+    display: flex;
+}
+
+.formElement__input{
+    border: 1px solid #bdbdbd ;
+    padding: 10px;
+    flex-grow: 8;
+    margin-right: 6px;
+}
+
+.formElement--button{
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    border: 1px solid teal;
+    flex-grow: 1;
+    margin-left: 5px;
+}

@@ -1,0 +1,17 @@
+
+.list__container--header{
+    padding: 20px;
+    border-bottom: 2px solid #bdbdbd;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 0px;
+
+}
+
+.list__container--items{
+    padding: 20px;
+    border-bottom: 2px solid #bdbdbd;
+    background-color: #fff;
+    width: 100%;
+    min-height: 67px;
+}
