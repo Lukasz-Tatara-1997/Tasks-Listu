@@ -16,29 +16,47 @@
   ];
 
   const render = () => {
+    const newTask = document.querySelectorAll(".newTask");
     let htmlString = "";
 
-    for(const task of tasks){
+    for (const task of tasks) {
       htmlString += `
-      <li>
+      <li
+      }>
       ${task.content}
       </li>
       `;
     }
     document.querySelector(".js--tasks").innerHTML = htmlString;
-  }
+  };
 
-// const formElement = document.querySelector(".formElement");
+  const addNewTask = (newTaskContent) => {
+    tasks.push({
+      content: newTaskContent,
+    });
+    render();
+  };
 
-// formElement.addEventListener("submit", (event) => {
-//   event.preventDefault();
-// });
+  const onFormSubmit = (event) => {
+    event.preventDefault();
 
-const init = () => {
-  render();
+    const newTaskContent = document
+      .querySelector(".formInput--js")
+      .value.trim();
+
+      if (newTaskContent === ""){
+        return;
+      }
+      addNewTask(newTaskContent);
+     
+  };
+
+  const init = () => {
+    render();
+
+    const formElement = document.querySelector(".formElement");
+    formElement.addEventListener("submit", onFormSubmit);
+  };
+
+  init();
 }
-
-
-init();
-}
-
