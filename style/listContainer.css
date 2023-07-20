@@ -1,5 +1,4 @@
-
-.list__container--header{
+.list__container--header {
     padding: 20px;
     border-bottom: 2px solid #bdbdbd;
     background-color: #fff;
@@ -8,10 +7,27 @@
 
 }
 
-.list__container--items{
+.list__container--items {
     padding: 20px;
     border-bottom: 2px solid #bdbdbd;
     background-color: #fff;
     width: 100%;
     min-height: 67px;
 }
+
+.list__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap:20px;
+    list-style: none;
+    padding: 10px;
+}
+
+.tasks__content{
+line-height: 1.5;
+}
+
+.tasks__content--done {
+    text-decoration: line-through;
+}
+

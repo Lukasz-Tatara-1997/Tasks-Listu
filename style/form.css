@@ -3,14 +3,14 @@
     width: 100%;
     padding-bottom: 20px;
     padding: 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
 }
 
 .formElement__input{
     border: 1px solid #bdbdbd ;
     padding: 10px;
-    flex-grow: 8;
-    margin-right: 6px;
 }
 
 .formElement--button{
@@ -18,6 +18,15 @@
     background-color: teal;
     color: white;
     border: 1px solid teal;
-    flex-grow: 1;
-    margin-left: 5px;
+}
+
+.formElement--button:hover{
+    background-color: rgba(0, 128, 128, 0.801);
+    border: 1px solid black;
+
+}
+
+.formElement--button:active{
+    background-color: rgba(0, 128, 128, 0.619);
+
 }
