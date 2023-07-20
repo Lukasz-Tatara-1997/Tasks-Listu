@@ -14,20 +14,46 @@
       done: false,
     },
   ];
+  const bindRemoveEvents = () => {
+    const removeTaskButtons = document.querySelectorAll(".js--remove ");
+  
+    removeTaskButtons.forEach((removeTaskButton, taskIndex) => {
+      removeTaskButton.addEventListener("click", () =>{
+        removeTask(taskIndex);
+      });
+    });
+  };
+
+const bindToggleDoneEvents = () => {
+  const toggleDoneButtons = document.querySelectorAll(".toggleButton--js");
+
+  toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
+    toggleDoneButton.addEventListener("click", () =>{
+      toggleTaskDone(taskIndex);
+    });
+    
+  });
+};
 
   const render = () => {
-    const newTask = document.querySelectorAll(".newTask");
     let htmlString = "";
 
     for (const task of tasks) {
       htmlString += `
-      <li
-      }>
-      ${task.content}
+      <li class="list__item"
+      }><button class= " task__button task__button--toggleDone toggleButton--js ">
+      ${task.done ? "✔" : ""}</button>
+      <span class="tasks__content${task.done ? " tasks__content--done" : ""}">
+      ${task.content}</span>
+      <button class= " task__button task__button--remove js--remove "> 🗑 </button>
       </li>
       `;
     }
+
     document.querySelector(".js--tasks").innerHTML = htmlString;
+
+    bindRemoveEvents();
+    bindToggleDoneEvents();
   };
 
   const addNewTask = (newTaskContent) => {
@@ -44,12 +70,16 @@
       .querySelector(".formInput--js")
       .value.trim();
 
-      if (newTaskContent === ""){
-        return;
-      }
+      const newTaskElement = document.querySelector(".formElement__input");
+
+
+    if (newTaskContent !== "") {
       addNewTask(newTaskContent);
-     
+      newTaskElement.value = "";
+    }
+    newTaskElement.focus();
   };
+
 
   const init = () => {
     render();
