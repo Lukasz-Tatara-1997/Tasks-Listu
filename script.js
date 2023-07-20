@@ -4,16 +4,25 @@
   };
   welcome();
 
-  const tasks = [
-    {
-      content: "kupić chleb",
-      done: true,
-    },
-    {
-      content: "isć na extra",
-      done: false,
-    },
-  ];
+  const tasks = [];
+
+  const removeTask = (taskIndex) => {
+    tasks.splice(taskIndex, 1);
+    render();
+  };
+
+  const toggleTaskDone = (taskIndex) => {
+    tasks[taskIndex].done = !tasks[taskIndex].done;
+    render();
+  };
+
+  const addNewTask = (newTaskContent) => {
+    tasks.push({
+      content: newTaskContent,
+    });
+    render();
+  };
+
   const bindRemoveEvents = () => {
     const removeTaskButtons = document.querySelectorAll(".js--remove ");
   
@@ -56,12 +65,7 @@ const bindToggleDoneEvents = () => {
     bindToggleDoneEvents();
   };
 
-  const addNewTask = (newTaskContent) => {
-    tasks.push({
-      content: newTaskContent,
-    });
-    render();
-  };
+
 
   const onFormSubmit = (event) => {
     event.preventDefault();
