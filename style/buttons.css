@@ -1,0 +1,24 @@
+.task__button{
+    height: 30px;
+    width: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.task__button--toggleDone{
+background-color: rgb(66, 110, 0);
+}
+
+.task__button--toggleDone:hover{
+    background-color: rgba(0, 128, 0, 0.904);
+}
+
+.task__button--remove {
+    background-color: red;
+}
+
+
+.task__button--remove:hover {
+    background-color: rgba(255, 0, 0, 0.729);
+}
