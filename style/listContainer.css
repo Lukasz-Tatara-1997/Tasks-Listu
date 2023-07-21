@@ -11,7 +11,7 @@
     padding: 20px;
     border-bottom: 2px solid #bdbdbd;
     background-color: #fff;
-    width: 100%;
+    max-width: 100%;
     min-height: 67px;
 }
 
@@ -20,14 +20,24 @@
     grid-template-columns: auto 1fr auto;
     grid-gap:20px;
     list-style: none;
-    padding: 10px;
+    padding-bottom: 10px;
+
+}
+
+.js--tasks{
+    padding: 0;
 }
 
 .tasks__content{
 line-height: 1.5;
+
 }
+
 
 .tasks__content--done {
     text-decoration: line-through;
 }
+ 
+
+
 
